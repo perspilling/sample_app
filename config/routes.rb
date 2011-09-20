@@ -1,13 +1,18 @@
 SampleApp::Application.routes.draw do
-  get "issues/rspec_title_problem"
+  # basic routes
+  get "users/new"
 
   get "pages/home"
   get "pages/contact"
   get "pages/about"
 
+  get "issues/rspec_title_problem"
+
+  # aliases
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
+  match '/signup',  :to => 'users#new'
 
   root :to => 'pages#home'
 
