@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ruby on Rails Tutorial Sample App | <%= @title %></title>
+  </head>
+  <body>
+    <h1>RSpec @title problem</h1>
+    <p>
+      For some reason RSpec doesn't see the value of the @title variable on this page even though it is
+      filled in correctly when looking at the generated HTML in the browser.
+    </p>
+    <p>
+      Issue solved: It turned out that *spork* need to be restarted, and that the *'render_views'* must be added
+      to the spec file.
+    </p>
+  </body>
+</html>
