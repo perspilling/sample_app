@@ -12,8 +12,8 @@ class PagesController < ApplicationController
     @title = "About"
   end
 
-  def about_rspec_problem
-    @title = "About RSpec problem"
+  def help
+    @title = "Help"
   end
 
 end
