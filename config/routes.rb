@@ -1,5 +1,15 @@
 SampleApp::Application.routes.draw do
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
+
+  # aliases
+  match '/contact', :to => 'pages#contact'
+  match '/about',   :to => 'pages#about'
+  match '/help',    :to => 'pages#help'
+
+  match '/signup',  :to => 'users#new'
+  match '/signin',  :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
 
   # basic routes
   get "pages/home"
@@ -7,13 +17,6 @@ SampleApp::Application.routes.draw do
   get "pages/about"
 
   get "issues/rspec_title_problem"
-
-  # aliases
-  match '/signup',  :to => 'users#new'
-
-  match '/contact', :to => 'pages#contact'
-  match '/about',   :to => 'pages#about'
-  match '/help',    :to => 'pages#help'
 
   root :to => 'pages#home'
 
